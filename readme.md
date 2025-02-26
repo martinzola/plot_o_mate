@@ -64,19 +64,35 @@ Argument	    Description
 
 filename	    Input file(s) containing the data to plot.
 --plot_name 	    Custom name for the plot and title.
+
 --plot_labels	    Custom labels for the plot curves (one per input file).
+
 --rolling_average	Window size for rolling average (default: 1, no rolling average).
+
 --x_axis_label	    Label for the x-axis.
+
 --x_axis_high_lim	Upper limit for the x-axis.
+
 --x_axis_low_lim	Lower limit for the x-axis.
+
 --y_axis_label	    Label for the y-axis.
+
 --y_axis_high_lim	Upper limit for the y-axis.
+
 --y_axis_low_lim	Lower limit for the y-axis.
+
 --factor_conversion	Factor to convert y-values by (default: 1).
+
 --x_axis_conversion	Factor to scale the x-axis by (default: 1).
+
 --line_colors	    Colors for the plot curves (one per input file).
+
 --line_styles	    Line styles for the plot curves (one per input file).
+
 --markers	        Markers for the plot curves (one per input file).
+
 --fit_type	        Type of fit to apply (e.g., "linear").
---stdev	            Index of the column containing standard deviation values.
+
+--stdev	            Index of the column containing standard deviation values
+
 --fontsize	        Font size for the plot elements.
