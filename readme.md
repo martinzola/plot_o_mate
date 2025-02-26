@@ -1,4 +1,4 @@
-!![Logo](images/logo.pdf)
+!![Logo](images/logo.png)
 
 # Plot_o_mate: An easy to use data plotting tool
 
