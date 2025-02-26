@@ -1,3 +1,5 @@
+!![Logo](images/logo.pdf)
+
 # Plot_o_mate: An easy to use data plotting tool
 
 This is a simple command-line program that allows a user to plot any simple two-column file(s) containing X and Y data,
@@ -62,7 +64,8 @@ The plot is automatically saved as a PDF file. The default filename is derived f
 
 Argument	    Description
 
-filename	    Input file(s) containing the data to plot.
+filename	        Input file(s) containing the data to plot.
+
 --plot_name 	    Custom name for the plot and title.
 
 --plot_labels	    Custom labels for the plot curves (one per input file).
