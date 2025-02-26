@@ -1,4 +1,4 @@
-# Plotly: An easy to use data plotting tool
+# Plot_o_mate: An easy to use data plotting tool
 
 This is a simple command-line program that allows a user to plot any simple two-column file(s) containing X and Y data,
 with with optional transformations such as linear fitting and rolling averages. It supports custom labels, axis limits, and styling options.
