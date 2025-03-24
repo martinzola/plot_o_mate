@@ -1,0 +1,12 @@
+python ../../plot_o_mate.py energy_scan.txt -x "Distance (Å)" -y "Potential Energy (ha)" -pl "Energy" -pt "Energy scan for molecule binding" -ls "dashdot" -lc "#118ab2"
+
+
+### The following command will produce a plot for a simple data file with 2 columns, with the first column as x-axis and the second column as y-axis.
+### The additional commands are explained below:
+### -x: The label for the x-axis.
+### -y: The label for the y-axis.
+### -pl: The plot label for the y-data. This is the label that is displayed for the line in the legend.
+### -pt: The plot title.
+### -ls: The line style for the plot.
+### -lc: The line color for the plot.
+

@@ -1,0 +1,13 @@
+python ../../plot_o_mate.py Bratislava.txt Vienna.txt Prague.txt Budapest.txt -pn "city_comparison" -pt "Normalised average area of green space from center of city" -pl "Av. No. of green space area around city centre" -y_low 0 -y_high 6 -y "Hectares" -x "Distance from Membrane Core (km)" -pl "Bratislava" "Vienna" "Prague" "Budapest" -lc "hotpink" "navy" "#cdb4db" "#a2d2ff" -ls "solid" "solid" "dashed" "dashed" 
+
+### The following command will produce a plot for multiple data files with 2 columns, with the first column as x-axis and the second column as y-axis.
+### The additional commands are explained below:
+### -pn: The plot name. This is the name of the plot that is used to save the plot file.
+### -pt: The plot title.
+### -x: The label for the x-axis.
+### -y: The label for the y-axis.
+### -pl: The plot label for the y-data. This is the label that is displayed for the line in the legend. The number of plot labels should match the number of data files, if you wish to specify different labels for each data file.
+### -ls: The line style for the plot. The number of line styles should match the number of data files if you wish to specify different line styles for each data file.
+### -lc: The line color for the plot. The number of line colors should match the number of data files if you wish to specify different colors for each data file.
+### -y_high: The upper limit for the y-axis.
+### -y_low: The lower limit for the y-axis.

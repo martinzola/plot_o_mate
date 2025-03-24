@@ -1,0 +1,20 @@
+python ../../plot_o_mate.py rmsd.txt -pn "" -pt 'RMSD evolution in Simulation'  -pl "RMSD" -x "Simulation Time (ns)" -y "RMSD (Å)" -lc "#ffb703" -y_high 6 -y_low 0 -fc 10 -ra 100 -fx 0.001
+
+### The following command will produce a plot for a data file with 2 columns, with the first column as x-axis and the second column as y-axis. 
+### Here, the rolling average of the data is plotted alongside the raw data.
+### The rolling average is calculated over a window of 100 data points.
+### The additional commands are explained below:
+### -pn: The plot name. This is the name of the plot that is used to save the plot file.
+### -x: The label for the x-axis.
+### -y: The label for the y-axis.
+### -pl: The plot label for the y-data. This is the label that is displayed for the line in the legend.
+### -pt: The plot title.
+### -ls: The line style for the plot.
+### -lc: The line color for the plot.
+### -y_high: The upper limit for the y-axis.
+### -y_low: The lower limit for the y-axis.
+### -ra: The window size for the rolling average.
+### -fc: The factor by which the y-axis values should be multiplied. This is useful for converting the y-axis values to a different unit.
+### -fx: The factor by which the x-axis values should be multiplied. This is useful for converting the x-axis values to a different unit.
+
+

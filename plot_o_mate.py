@@ -3,10 +3,13 @@
 A command-line tool for plotting data with optional linear fitting and rolling averages.
 """
 
+from re import A
+from click import argument
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
 from scipy.stats import linregress
+from torch import alpha_dropout
 
 
 def get_args():
@@ -181,14 +184,24 @@ def make_plot(table, label, rolling_average, color=None, style=None, marker=None
     """
     x_values = np.array([x * arguments.x_axis_conversion for x in table[0]])
     y_values = np.array([y * arguments.factor_conversion for y in table[1]])
-
+    
     # Apply rolling average if requested
     if rolling_average > 1:
-        y_values = np.convolve(y_values, np.ones(rolling_average) / rolling_average, mode="valid")
+        plt.plot(x_values, y_values, label=label, color=color, linestyle=style if fit_type is None else '', marker=marker, alpha=0.3)
+        y_values = np.convolve(y_values, np.ones(rolling_average)/rolling_average, mode='valid')
         x_values = x_values[:len(y_values)]
-
-    # Plot the data
-    plt.plot(x_values, y_values, label=label, color=color, linestyle=style if fit_type is None else "", marker=marker)
+        plt.plot(x_values,
+                 y_values,
+                 label=f"{label} Rolling Average" if label else "None",
+                 color=color,
+                 linestyle='--' if fit_type is None else '',
+                 marker=marker,
+                 alpha=0.7)
+    
+    # Otherise plot the data normally
+    else:
+        plt.plot(x_values, y_values, label=label, color=color, linestyle=style if fit_type is None else "", marker=marker,
+                alpha=0.7 if rolling_average>1 else 1)
 
     # Plot shaded area for standard deviation if provided
     if table[2] is not None:
@@ -241,6 +254,8 @@ if __name__ == "__main__":
                   color=color, style=style, marker=marker, fit_type=arguments.fit_type, fontsize=fontsize)
     
     # Finalize and save the plot
+    title = arguments.plot_title if arguments.plot_title else None
+    plt.title(title, fontsize=fontsize)
     plotname = arguments.plot_name if arguments.plot_name else arguments.filename[0][:-4]
     if arguments.x_axis_low_lim or arguments.x_axis_high_lim:
         plt.xlim(arguments.x_axis_low_lim, arguments.x_axis_high_lim)
